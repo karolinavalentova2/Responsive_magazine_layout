@@ -1,0 +1,131 @@
+body {
+    background: #f0f5f9;
+    background-size: 100vw;
+    margin: 0;
+    overflow: overlay;
+}
+
+.grid-container {
+    width: 100vw;
+    overflow:hidden;
+    font-family: 'EB Garamond', serif;
+    display: grid;
+    grid-gap: 66px;
+    grid-template-columns: 0.3fr 2fr 1fr 1.2fr 0.9fr 0.3fr;
+    grid-template-rows: 0.2fr 0.9fr 0.7fr 0.8fr 1fr 1fr 0.1fr 0.1fr;
+    grid-template-areas:
+    ". header header . button ."
+    ". headline . . . ."
+    ". img1 standfirst standfirst . ."
+    ". img1 subhead subhead . ."
+    ". article1 img2 img2 img2 ."
+    ". article1 img3 article2 article2 ."
+    ". article1 img3 article2 article2 ."
+    ". footer footer footer footer ."
+    ". footer footer footer footer .";
+}
+
+.grid-area {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.banner {
+    grid-area: header;
+    align-self: end;
+}
+
+.button {
+    grid-area: button;
+    align-self: end;
+    justify-self: end;
+}
+
+.headline {
+    grid-area: headline;
+    align-self: center;
+    font-size: 73px;
+}
+
+.img1 {
+    grid-area: img1;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.meme-backend {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+
+.stand-first {
+    grid-area: standfirst;
+    font-size: 32px;
+    color: #29a19c;
+}
+
+.subhead {
+    grid-area: subhead;
+    font-size: 32px;
+}
+
+.article1 {
+    grid-area: article1;
+    font-size: 21px;
+    text-align: justify;
+}
+
+.article1:first-letter {
+    font-size: 86px;
+    float: left;
+    margin-bottom: -24px;
+    margin-right: 31px;
+}
+
+.img2 {
+    grid-area: img2;
+    height: 100%;
+    background-size: cover; /* <-- background size */
+    background-position: center;
+}
+
+.img3 {
+    grid-area: img3;
+    max-width: 305px;
+    display: block;
+    object-fit: cover;
+}
+
+.img3 > img {
+    max-width: inherit;
+    max-height: inherit;
+}
+
+.article2 {
+    grid-area: article2;
+    font-size: 21px;
+    text-align: justify;
+}
+
+.footer {
+    grid-area: footer;
+    align-self: start;
+    justify-self: end;
+}
+
+img {
+    box-shadow: 10px 8px 7px -4px rgba(0,0,0,0.43);
+}
+
+@media (max-width: 600px) {
+    .parent {
+        grid-template-columns: auto;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-areas: "header"
+        "sidebar"
+        "main"
+        "footer"
+    }
+}
