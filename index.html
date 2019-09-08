@@ -5,63 +5,85 @@
     <title>Magazine layout</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond:600&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <script>
+        let previousStyleClass;
+
+        function doChangeStyle(newClass) {
+            let bodyElement = document.getElementById('body');
+            bodyElement.classList.remove(previousStyleClass);
+            previousStyleClass = newClass;
+
+            bodyElement.classList.add(newClass);
+        }
+    </script>
 </head>
-<body>
-<div class="grid-container">
-    <header class="banner grid-area">01 Magazine layout - school project</header>
-    <button class="button grid-area">Chose color scheme</button>
-    <h1 class="headline grid-area">I am getting crazy from CSS</h1>
-    <div class="img1 grid-area">
-        <img class="meme-backend" src="./images/memes.png" alt="image">
+<body class="default" id="body">
+<div class="body" id="default" >
+    <div class="grid-container">
+        <header class="banner grid-area">01 Magazine layout - school project</header>
+        <!--    <button class="button grid-area">Chose color scheme</button>-->
+        <div class="dropDown grid-area">
+            <button class="sortByButton">Chose a color scheme</button>
+            <div style="list-style: none;" class="dropDown-content">
+                <div onclick="doChangeStyle('default')">Default</div>
+                <div onclick="doChangeStyle('dark')">Dark</div>
+                <div onclick="doChangeStyle('happy')">Happy</div>
+            </div>
+        </div>
+        <h1 class="headline grid-area">I am getting crazy from CSS</h1>
+        <div class="img1 grid-area">
+            <img class="meme-backend" src="./images/memes.png" alt="image">
+        </div>
+        <p class="stand-first grid-area">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas. Orci ac auctor augue mauris.
+            Diam sollicitudin tempor id eu nisl nunc mi. Ipsum consequat nisl vel pretium lectus.
+        </p>
+        <h2 class="subhead grid-area">
+            Nec ultrices dui sapien eget mi. Vestibulum rhoncus est
+            pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Rutrum quisque non tellus orci ac
+            auctor augue. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Sit amet risus
+            nullam eget felis eget nunc lobortis.
+        </h2>
+        <article class="article1 grid-area">
+            Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Cursus mattis molestie a iaculis. Sit amet
+            luctus venenatis lectus magna. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Elit eget
+            gravida cum sociis natoque penatibus et magnis. Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+            aliquam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Lacinia quis vel
+            eros donec ac odio tempor orci. Gravida quis blandit turpis cursus. Sed viverra tellus in hac habitasse
+            platea dictumst vestibulum. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt.
+            Nisi est sit amet facilisis magna etiam tempor orci. Vel pretium lectus quam id leo in vitae turpis.
+            Lacus laoreet non curabitur gravida. Tincidunt id aliquet risus feugiat in ante metus. Nulla facilisi
+            cras fermentum odio. Non quam lacus suspendisse faucibus interdum posuere. Velit scelerisque in dictum
+            non consectetur a. Tellus cras adipiscing enim eu turpis. Dictum fusce ut placerat orci nulla pellentesque
+            dignissim enim. Eros donec ac odio tempor orci dapibus.
+            Et netus et malesuada fames. Felis donec et odio pellentesque diam volutpat. Condimentum vitae sapien
+            pellentesque habitant morbi tristique senectus et.
+        </article>
+        <div class="img2 grid-area">
+            <img src="./images/titanic.png" alt="image">
+        </div>
+        <div class="img3 grid-area">
+            <img src="./images/meme2.png" alt="image">
+        </div>
+        <article class="article2 grid-area">
+            Pellentesque
+            nec nam aliquam sem et tortor. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
+            Et tortor at risus viverra adipiscing at. Cursus euismod quis viverra nibh. Viverra adipiscing at in
+            tellus integer feugiat scelerisque. Tellus in hac habitasse platea. Id neque aliquam vestibulum morbi.
+            Lobortis mattis aliquam faucibus purus in massa tempor. Nisi quis eleifend quam adipiscing. Lectus arcu
+            bibendum at varius vel pharetra vel turpis nunc. Mattis enim ut tellus elementum sagittis vitae et leo.
+            </br>
+            Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Eget felis eget nunc lobortis mattis
+            aliquam faucibus purus. Libero volutpat sed cras ornare arcu dui vivamus arcu felis. Commodo elit at
+            imperdiet dui accumsan sit amet nulla facilisi. Proin nibh nisl condimentum id venenatis a condimentum vitae.
+            Consectetur libero id faucibus nisl tincidunt eget nullam non nisi. Et leo duis ut diam quam nulla. Augue ut
+            lectus arcu bibendum at varius vel pharetra. Amet massa vitae tortor condimentum lacinia quis vel eros donec.
+        </article>
+        <footer class="footer grid-area">Made by Karolina Valentova ¯\_(ツ)_/¯</footer>
     </div>
-    <p class="stand-first grid-area">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas. Orci ac auctor augue mauris.
-        Diam sollicitudin tempor id eu nisl nunc mi. Ipsum consequat nisl vel pretium lectus.
-    </p>
-    <h2 class="subhead grid-area">
-        Nec ultrices dui sapien eget mi. Vestibulum rhoncus est
-        pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Rutrum quisque non tellus orci ac
-        auctor augue. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Sit amet risus
-        nullam eget felis eget nunc lobortis.
-    </h2>
-    <article class="article1 grid-area">
-        Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Cursus mattis molestie a iaculis. Sit amet
-        luctus venenatis lectus magna. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Elit eget
-        gravida cum sociis natoque penatibus et magnis. Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-        aliquam. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Lacinia quis vel
-        eros donec ac odio tempor orci. Gravida quis blandit turpis cursus. Sed viverra tellus in hac habitasse
-        platea dictumst vestibulum. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt.
-        Nisi est sit amet facilisis magna etiam tempor orci. Vel pretium lectus quam id leo in vitae turpis.
-        Lacus laoreet non curabitur gravida. Tincidunt id aliquet risus feugiat in ante metus. Nulla facilisi
-        cras fermentum odio. Non quam lacus suspendisse faucibus interdum posuere. Velit scelerisque in dictum
-        non consectetur a. Tellus cras adipiscing enim eu turpis. Dictum fusce ut placerat orci nulla pellentesque
-        dignissim enim. Eros donec ac odio tempor orci dapibus.
-        Et netus et malesuada fames. Felis donec et odio pellentesque diam volutpat. Condimentum vitae sapien
-        pellentesque habitant morbi tristique senectus et.
-    </article>
-    <div class="img2 grid-area">
-        <img src="./images/titanic.png" alt="image">
-    </div>
-    <div class="img3 grid-area">
-        <img src="./images/meme2.png" alt="image">
-    </div>
-    <article class="article2 grid-area">
-        Pellentesque
-        nec nam aliquam sem et tortor. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae.
-        Et tortor at risus viverra adipiscing at. Cursus euismod quis viverra nibh. Viverra adipiscing at in
-        tellus integer feugiat scelerisque. Tellus in hac habitasse platea. Id neque aliquam vestibulum morbi.
-        Lobortis mattis aliquam faucibus purus in massa tempor. Nisi quis eleifend quam adipiscing. Lectus arcu
-        bibendum at varius vel pharetra vel turpis nunc. Mattis enim ut tellus elementum sagittis vitae et leo.
-        </br>
-        Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Eget felis eget nunc lobortis mattis
-        aliquam faucibus purus. Libero volutpat sed cras ornare arcu dui vivamus arcu felis. Commodo elit at
-        imperdiet dui accumsan sit amet nulla facilisi. Proin nibh nisl condimentum id venenatis a condimentum vitae.
-        Consectetur libero id faucibus nisl tincidunt eget nullam non nisi. Et leo duis ut diam quam nulla. Augue ut
-        lectus arcu bibendum at varius vel pharetra. Amet massa vitae tortor condimentum lacinia quis vel eros donec.
-    </article>
-    <footer class="footer grid-area">Made ba Karolina Valentova</footer>
 </div>
 </body>
-<script src="./script.js"></script>
+
 </html>
