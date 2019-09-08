@@ -12,12 +12,13 @@
     width: 100vw;
     overflow:hidden;
     display: grid;
-    grid-gap: 66px;
-    grid-template-columns: 0.3fr 2fr 1fr 1.2fr 0.9fr 0.3fr;
-    grid-template-rows: 0.2fr 0.9fr 0.7fr 0.8fr 1fr 1fr 0.1fr 0.1fr;
+    grid-gap: 3vw;
+    grid-template-columns: 0.3fr 1.8fr 1fr 1.2fr 0.7fr 0.3fr;
+    grid-template-rows: 89px 400px 0.7fr 0.8fr 1fr 1fr 0.1fr 0.1fr;
+    /*grid-template-rows: 0.2fr 0.9fr 0.7fr 0.8fr 1fr 1fr 0.1fr 0.1fr;*/
     grid-template-areas:
     ". header header . button ."
-    ". headline . . . ."
+    ". headline headline . . ."
     ". img1 standfirst standfirst . ."
     ". img1 subhead subhead . ."
     ". article1 img2 img2 img2 ."
@@ -47,7 +48,7 @@
 .headline {
     grid-area: headline;
     align-self: center;
-    font-size: 73px;
+    font-size: 4.5em;
 }
 
 .img1 {
@@ -65,23 +66,23 @@
 
 .stand-first {
     grid-area: standfirst;
-    font-size: 32px;
+    font-size: 2em;
     color: var(--contrast-color);
 }
 
 .subhead {
     grid-area: subhead;
-    font-size: 32px;
+    font-size: 2em;
 }
 
 .article1 {
     grid-area: article1;
-    font-size: 21px;
+    font-size: 1.3em;
     text-align: justify;
 }
 
 .article1:first-letter {
-    font-size: 86px;
+    font-size: 5.3em;
     float: left;
     margin-bottom: -24px;
     margin-right: 31px;
@@ -128,6 +129,7 @@ img {
     background-color: var(--contrast-color);
     color: var(--button-text);
     padding: 10px 20px 10px 20px;
+    width: 203px;
     font-size: 1em;
     border: none;
 }
@@ -151,9 +153,9 @@ img {
 
 .dropDown-content div:hover {background-color: var(--hover-button-color); color: var(--hover-text-color);}
 
-.dropDown:hover .dropDown-content {display: block;}
+.dropDown:hover .dropDown-content {display: block; cursor: pointer;}
 
-.dropDown:hover .sortByButton {background: var(--hover-button-color)}
+.dropDown:hover .sortByButton {background: var(--hover-button-color); cursor: pointer;}
 
 
 /* color schemes */
@@ -188,13 +190,125 @@ img {
 }
 
 /* mobile responsive */
-@media (max-width: 600px) {
-    .parent {
-        grid-template-columns: auto;
-        grid-template-rows: 50px auto auto 50px;
-        grid-template-areas: "header"
-        "sidebar"
-        "main"
-        "footer"
+@media (max-width: 1025px) {
+    .grid-container {
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-gap: 28px;
+        grid-template-columns: 50% 47%;
+        grid-template-rows: 89px 500px 0.1fr 0.4fr 0.6fr 0.1fr 0.9fr 0.9fr 0.1fr;
+        grid-template-areas:
+                "header button"
+                "headline headline"
+                "img1 standfirst"
+                "img1 subhead "
+                "article1 article1"
+                "img2 img2"
+                "img3 ."
+                "article2 article2"
+                "footer footer";
     }
+
+    .stand-first {
+        grid-area: standfirst;
+        font-size: 1.35em;
+        color: var(--contrast-color);
+        margin-left: 2px;
+        margin-right: 9px;
+    }
+
+    .dropDown {
+        grid-area: button;
+        align-self: end;
+        justify-self: end;
+        margin-right: 9px;
+    }
+
+    .img1 {
+        grid-area: img1;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .meme-backend {
+        object-fit: cover;
+        width: 113%;
+        max-width: 99%;
+    }
+
+    .stand-first {
+        grid-area: standfirst;
+        font-size: 1.35em;
+        color: var(--contrast-color);
+        margin-left: 2px;
+        margin-right: 9px;
+    }
+
+    .subhead {
+        grid-area: subhead;
+        font-size: 1.35em;
+        margin-left: 2px;
+        margin-right: 9px;
+    }
+
+    .article1 {
+        grid-area: article1;
+        font-size: 1.2em;
+        text-align: justify;
+        margin: 19px;
+    }
+
+    .article2 {
+        grid-area: article2;
+        font-size: 1.2em;
+        text-align: justify;
+        margin: 19px;
+    }
+
+}
+
+@media (max-width: 415px) {
+    .grid-container {
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: 100%;
+        grid-template-rows: 70px 30px 360px 0.6fr 0.3fr 0.2fr 0.6fr 0.2fr 0.3fr 0.1fr 0.1fr;
+        grid-template-areas: "header" "button" "headline" "img1" "standfirst" "subhead" "article1" "img2" "img3" "article2" "footer";
+    }
+
+    .dropDown {
+        grid-area: button;
+        align-self: end;
+        justify-self: start;
+        margin-right: 9px;
+    }
+
+    .headline {
+        grid-area: headline;
+        align-self: end;
+        font-size: 3em;
+    }
+
+    .meme-backend {
+        object-fit: cover;
+        width: 113%;
+        max-width: 99%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .img3 {
+        max-width: 100%;
+    }
+
+    .img2 {
+        max-width: 100%;
+    }
+
+
 }
